@@ -27,15 +27,11 @@ task buildZip(type: Zip) {
     from processResources
     into('lib') {
         from configurations.runtime
+        from subprojects.jar
+        from subprojects.configurations.runtime
     }
+    duplicatesStrategy = 'exclude'
     archiveName = 'lambda.zip'
 }
 
-task copyToLib(type: Copy) {
-    into "$buildDir/lib"
-    from configurations.runtime
-    from subprojects.jar
-    from subprojects.configurations.runtime
-}
-
-build.dependsOn buildZip, copyToLib
+build.dependsOn buildZip
