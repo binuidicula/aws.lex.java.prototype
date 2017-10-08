@@ -43,5 +43,14 @@ task copyToLib(type: Copy) {
 }
 
 
+task copyJars(type: Copy, dependsOn: subprojects.jar) {
+    from(subprojects.jar)
+    into "$buildDir/lib"
+}
 
-build.dependsOn copyToLib, buildZip
+task copyDeps(type: Copy) {
+    from(subprojects.configurations.runtime)
+    into "$buildDir/lib"
+}
+
+build.dependsOn copyJars, copyDeps
