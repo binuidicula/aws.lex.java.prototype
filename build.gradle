@@ -34,10 +34,8 @@ task buildZip(type: Zip) {
 task copyToLib(type: Copy) {
     into "$buildDir/lib"
     from configurations.runtime
-    subprojects {
-        from tasks.withType(Jar)
-        from configurations.runtime
-    }
+    from subprojects.jar
+    from subprojects.configurations.runtime
 }
 
 build.dependsOn buildZip, copyToLib

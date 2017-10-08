@@ -14,7 +14,7 @@ Resources:
   TimeFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: com.com.netreally.aws.lex.quiz.QuizMaster::handleRequest
+      Handler: com.netreally.aws.lex.quiz.QuizMaster::handleRequest
       Runtime: java8
       CodeUri:
          Bucket: !Ref SourceBucket
