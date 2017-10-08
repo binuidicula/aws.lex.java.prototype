@@ -1,0 +1,44 @@
+
+group 'com.com.netreally'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+allprojects {
+    task compile doLast { task -> println "Compiled: $task.project.name" }
+}
+
+subprojects {
+    apply plugin: "java"
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testCompile (
+                'junit:junit:4.12'
+        )
+    }
+}
+
+task buildZip(type: Zip) {
+    from compileJava
+    from processResources
+    into('lib') {
+        from configurations.runtime
+    }
+    archiveName = 'lambda.zip'
+}
+
+task copyToLib(type: Copy) {
+    into "$buildDir/lib"
+    from configurations.runtime
+    subprojects {
+        from tasks.withType(Jar)
+        from configurations.runtime
+    }
+}
+
+build.dependsOn buildZip, copyToLib

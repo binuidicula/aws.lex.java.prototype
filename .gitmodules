@@ -1,0 +1,6 @@
+[submodule "aws.lex.domain.entities"]
+	path = aws.lex.domain.entities
+	url = https://binuidicula@github.com/binuidicula/aws.lex.domain.entities
+[submodule "aws.lex.bot.quiz"]
+	path = aws.lex.bot.quiz
+	url = https://binuidicula@github.com/binuidicula/aws.lex.bot.quiz
