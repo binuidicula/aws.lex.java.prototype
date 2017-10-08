@@ -1,2 +1,3 @@
 rootProject.name = 'netreally.bots.quiz'
-include 'lex.domain.entities', 'lex.bot.quiz'
+include 'aws.lex.domain.entities'
+include 'aws.lex.bot.quiz'

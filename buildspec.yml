@@ -16,7 +16,6 @@ phases:
       - echo Build started on `date`
       - gradle build
       - mkdir -p deploy
-      - cp -r build/classes/main/* deploy/
       - cp NewSamTemplate.yaml deploy/
       - cp -r build/lib deploy/
       - ls -ltr deploy

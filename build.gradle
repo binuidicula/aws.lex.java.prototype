@@ -1,5 +1,4 @@
-
-group 'com.com.netreally'
+group 'com.netreally'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
