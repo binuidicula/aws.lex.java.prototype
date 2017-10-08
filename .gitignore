@@ -39,4 +39,4 @@ Thumbs.db
 # idea specific #
 ######################
 .idea/
-.iml
+*.iml
