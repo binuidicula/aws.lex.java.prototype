@@ -19,3 +19,12 @@ Resources:
       CodeUri:
          Bucket: !Ref SourceBucket
          Key: !Ref SourceArtifact
+
+  TimeFunction:
+     Type: AWS::Serverless::Function
+     Properties:
+       Handler: com.netreally.aws.lex.quiz.QuizScheduler::createQuestions
+       Runtime: java8
+       CodeUri:
+          Bucket: !Ref SourceBucket
+          Key: !Ref SourceArtifact

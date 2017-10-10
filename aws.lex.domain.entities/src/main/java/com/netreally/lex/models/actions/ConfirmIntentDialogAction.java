@@ -26,8 +26,6 @@ public class ConfirmIntentDialogAction extends DialogAction {
         this.responseCard = responseCard;
     }
 
-
-
     public ConfirmIntentDialogAction(){
         super(DialogActionType.ConfirmIntent);
         slots = new LinkedHashMap<>();
