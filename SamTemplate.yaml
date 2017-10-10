@@ -16,6 +16,7 @@ Resources:
     Properties:
       Handler: com.netreally.aws.lex.quiz.QuizMaster::handleRequest
       Runtime: java8
+      Description: Handles the quiz intention
       CodeUri:
          Bucket: !Ref SourceBucket
          Key: !Ref SourceArtifact
@@ -25,6 +26,7 @@ Resources:
      Properties:
        Handler: com.netreally.aws.lex.quiz.QuizScheduler::createQuestions
        Runtime: java8
+       Description: Creates questions for the day
        CodeUri:
           Bucket: !Ref SourceBucket
           Key: !Ref SourceArtifact
