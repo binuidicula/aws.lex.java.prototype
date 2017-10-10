@@ -19,6 +19,7 @@ public class QuizMaster implements RequestHandler<Map<String, Object>, LexRespon
 
         LexResponse response = new LexResponse();
         context.getLogger().log("Recieved an Input:" + new Gson().toJson(input));
+        context.getLogger().log("Processing Intention:");
         response.addSessionAttributes("customerid", "1234");
         response.addSessionAttributes("customername", "binu");
 
