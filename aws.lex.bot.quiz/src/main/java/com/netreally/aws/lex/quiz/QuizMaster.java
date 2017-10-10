@@ -24,6 +24,7 @@ public class QuizMaster implements RequestHandler<Map<String, Object>, LexRespon
         response.addSessionAttributes("customername", "binu");
 
         ConfirmIntentDialogAction action = new ConfirmIntentDialogAction();
+        action.setIntentName("AttemptQuiz");
         action.addToSlots("Option A", "George Bush");
         action.addToSlots("Option B", "Abraham Lincoln");
         action.addToSlots("Option C", "George Washington");
